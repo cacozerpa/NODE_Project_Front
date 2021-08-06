@@ -1,0 +1,11 @@
+.html,
+body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+p {
+  line-height: 1.7em;
+}
+.white {
+  color: white;
+}

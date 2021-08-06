@@ -1,0 +1,105 @@
+.contenedor-dashboard {
+  min-height: 100vh;
+  padding-top: 10vh;
+  width: 100vw;
+  display: flex;
+  /* justify-content: center; */
+  background-color: #d4dfeb;
+  align-items: stretch;
+}
+.contenedor-contenido-dashboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  width: 60vw;
+}
+.contenedor-info-perfil {
+  padding-top: 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* background-color: white; */
+  width: 20vw;
+}
+.caja-perfil {
+  position: fixed;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 18vw;
+  padding: 10px;
+  max-height: 50%;
+  background-color: #f3f3f3;
+}
+.caja-perfil h5 {
+  margin: 0.2em;
+}
+.imagen-perfil {
+  width: 80px;
+  border-radius: 100%;
+}
+.caja-botones-perfil {
+  display: flex;
+  justify-content: center;
+  width: 90%;
+  gap: 2px;
+}
+.caja-botones-perfil-item {
+  padding: 10px 0px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+}
+.caja-botones-perfil-item:hover {
+  cursor: pointer;
+  background-color: white;
+}
+.caja-botones-perfil-item img {
+  max-width: 30px;
+}
+.boton-tienda {
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.boton-tienda h1 {
+  border-bottom: solid;
+  border-width: 1px;
+  padding-bottom: 30px;
+}
+@media (max-width: 768px) {
+  .contenedor-dashboard {
+    padding-top: 120px;
+    flex-direction: column;
+    align-items: center;
+  }
+  .contenedor-info-perfil {
+    width: 90%;
+    padding-top: 0px;
+    order: 2;
+  }
+  .caja-perfil {
+    width: 100%;
+    position: initial;
+  }
+  .contenedor-contenido-dashboard {
+    order: 1;
+    width: 90%;
+  }
+  .boton-tienda {
+    padding: 0px 10px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+}

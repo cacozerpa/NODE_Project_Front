@@ -1,0 +1,17 @@
+import { setRes } from './setGetRes';
+
+const data = {
+  method: 'GET',
+  mode: 'cors',
+  credentials: 'include',
+  headers: {
+    Accept: 'application/json',
+    'Content-Type': 'application/json',
+  },
+};
+const getUserByIdFetch = async () => {
+  const res = await fetch(`http://localhost:5000/user`, data).then((cat)=>{console.log(cat.status)})
+  return await res.json();
+};
+
+export default getUserByIdFetch;
