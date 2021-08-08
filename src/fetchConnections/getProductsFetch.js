@@ -10,7 +10,7 @@ const data = {
   },
 };
 const getUserByIdFetch = async () => {
-  const res = await fetch(`http://localhost:5000/user`, data)
+  const res = await fetch(`http://localhost:5000/products`, data)
   return await res.json();
 };
 
