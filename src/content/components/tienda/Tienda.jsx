@@ -13,8 +13,7 @@ function Tienda() {
         <div className="contenedor-contenido-dashboard">
           <h1>Tienda</h1>
           <small className="tienda-lorem">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis
-            nulla enim quia suscipit nam alias.
+            En nuestra tienda podras encontrar todos los productos disponibles para la venta...!
           </small>
           <hr className="tienda-hr" />
           <div className="tienda">

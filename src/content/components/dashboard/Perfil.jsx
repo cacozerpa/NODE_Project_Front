@@ -31,8 +31,6 @@ function Perfil({ admin }) {
     getUser();
   },[])
 
-  console.log(data)
-
   return (
     <div className="caja-perfil">
       <img src={User} alt="" className="imagen-perfil"/>

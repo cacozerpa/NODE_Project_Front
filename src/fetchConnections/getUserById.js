@@ -1,4 +1,3 @@
-import { setRes } from './setGetRes';
 
 const data = {
   method: 'GET',

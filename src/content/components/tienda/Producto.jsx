@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Modal from "../modal/ProductAdded";
 
 import getProductsFetch from '../../../fetchConnections/getProductsFetch'
-import {getRes} from '../../../fetchConnections/setGetRes'
+
 function Tienda() {
   const [data, setData] = useState("");
   const [productos, setProductos] = useState([]);
@@ -21,8 +21,6 @@ function Tienda() {
   useEffect(()=> {
     getProducts()
   }, [])
-
-  console.log(productos);
 
   return (
     <>
@@ -43,7 +41,7 @@ function Tienda() {
               ></div>
               <div className="pedido-boton">
                 <button
-                  onClick={() => showModal(product.title)}
+                  onClick={() => showModal(product.name)}
                   className="boton-sesion"
                 >
                   <h2>Añadir al carrito</h2>
@@ -56,7 +54,7 @@ function Tienda() {
                 </small>
               </div>
               <button
-                onClick={() => showModal(data.titulo)}
+                onClick={() => showModal(product.name)}
                 className="boton-sesion boton-tlf"
               >
                 <h2>Añadir al carrito</h2>
