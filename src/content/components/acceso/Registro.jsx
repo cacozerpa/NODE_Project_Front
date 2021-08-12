@@ -52,6 +52,9 @@ function Registro() {
         <div className="area-formulario">
           <input type="password" placeholder="Confirmar Contraseña" />
         </div>
+        <div className="area-formulario">
+          <input type="text" placeholder="Dirección" />
+        </div>
         <button
           onClick={registro}
           className="boton-sesion"

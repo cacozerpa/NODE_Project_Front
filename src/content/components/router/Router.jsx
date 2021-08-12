@@ -1,6 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Navbar from "../nav/Navbar";
+import Perfil from "../perfil/Perfil"
+import NavbarSession from "../nav/NavbavSession"
 import Home from "../home/Home";
 import Access from "../acceso/Access";
 import Dashboard from "../dashboard/Dashboard.jsx";
@@ -21,9 +23,11 @@ function Index() {
             <Access />
           </Route>
           <Route path="/dashboard">
+            <NavbarSession />
             <Dashboard />
           </Route>
           <Route path="/tienda">
+          <NavbarSession/>
             <Tienda />
           </Route>
           <Route path="/admin-dashboard">
@@ -31,6 +35,10 @@ function Index() {
           </Route>
           <Route path="/soporte">
             <Soporte />
+          </Route>
+          <Route path="/perfil">
+          <NavbarSession/>
+            <Perfil/>
           </Route>
         </Switch>
       </Router>

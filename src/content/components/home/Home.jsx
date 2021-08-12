@@ -16,7 +16,7 @@ function Home() {
             }}
             className="boton-sesion"
           >
-            <h2>Inicia Sesion</h2>
+            <h2>Inicia Sesion o Registrate</h2>
           </button>
         </div>
         <h1 className="titulo-inicio">Nuestros Servicios</h1>

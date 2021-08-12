@@ -7,16 +7,13 @@ function Nav() {
         <div className="logo-titulo">
           <h1>Distribuidora Negrete C.A.</h1>
         </div>
-        <div className="barra-busqueda">
-          <input type="text" placeholder="Buscar" />
-        </div>
         <div className="links">
           <ul className="lista-links">
             <li className="link">
               <a href="/">Inicio</a>
             </li>
             <li className="link">
-              <a href="/acceso">Inicia Sesion</a>
+              <a href="/acceso">Inicio de Sesion/Registro</a>
             </li>
             <li className="link">
               <a href="/soporte">Soporte</a>
