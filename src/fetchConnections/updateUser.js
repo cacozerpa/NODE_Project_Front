@@ -1,17 +1,13 @@
 import { getRes, setRes } from "./setGetRes";
 
-const registerFetch = async (name, username, email, password, direccion) => {
+const updateUser = async ( email ) => {
   try {
     const body = {
-      name: name,
-      username: username,
       email: email,
-      password: password,
-      direccion: direccion
     };
 
     const data = {
-      method: "POST",
+      method: "PUT",
       mode: "cors",
       headers: {
         Accept: "application/json",
@@ -20,7 +16,7 @@ const registerFetch = async (name, username, email, password, direccion) => {
       body: JSON.stringify(body),
     };
 
-    return await fetch("http://localhost:5000/create", data)
+    return await fetch("http://localhost:5000/updateuser", data)
       .then((cat) => {
         console.log(cat.status)
         if (cat.status === 200) {
@@ -37,4 +33,4 @@ const registerFetch = async (name, username, email, password, direccion) => {
     console.log(error);
   }
 };
-export default registerFetch;
+export default updateUser;

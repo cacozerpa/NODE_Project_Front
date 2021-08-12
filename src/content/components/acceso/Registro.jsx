@@ -8,10 +8,11 @@ function Registro() {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [direccion, setDireccion] = useState('');
 
   const registro = async(e) => {
     e.preventDefault();
-    await registerFetch(name, username, email, password);
+    await registerFetch(name, username, email, password, direccion);
 
     const response= getRes();
     console.log(response)
@@ -53,7 +54,7 @@ function Registro() {
           <input type="password" placeholder="Confirmar Contraseña" />
         </div>
         <div className="area-formulario">
-          <input type="text" placeholder="Dirección" />
+          <input type="text" placeholder="Dirección" onChange = {(direccion) => setDireccion(direccion.target.value)}/>
         </div>
         <button
           onClick={registro}
