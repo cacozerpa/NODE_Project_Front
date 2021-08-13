@@ -1,6 +1,9 @@
 import { setRes } from './setGetRes';
 
-const createOrder = async () => {
+const createOrder = async (total) => {
+  const body = {
+    total:total
+  }
   try {
    
     const data = {
@@ -11,6 +14,7 @@ const createOrder = async () => {
         Accept: 'application/json',
         'Content-Type': 'application/json',
       },
+      body: JSON.stringify(body)
     };
 
     return await fetch(`http://localhost:5000/createorder`, data)

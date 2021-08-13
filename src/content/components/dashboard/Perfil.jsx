@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from "react";
 import User from "../../images/user-image.jfif";
 import UserButtonResume from "../../images/resume.svg";
-import UserButtonSettings from "../../images/settings.svg";
 import UserButtonLogout from "../../images/logout.svg";
 import "../../styles/dashboard.css";
 

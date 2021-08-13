@@ -1,7 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Modal from "../modal/ProductAdded";
-import Error from "../modal/ErrorProducto";
-
 import getCar from "../../../fetchConnections/getCar";
 import addItemTocar from "../../../fetchConnections/addItemTocar";
 import deleteItem from "../../../fetchConnections/deleteItem";
@@ -36,7 +33,6 @@ function Carrito() {
 
   return (
     <>
-      {data && <Modal data={data} />}
       {productos.map((product) => {
 
         const additem = async () => {

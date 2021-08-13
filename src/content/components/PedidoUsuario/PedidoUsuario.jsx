@@ -1,65 +1,38 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import "../../styles/pedidos.css";
-import Check from "../../images/tick.svg";
-import X from "../../images/letra-x.svg";
+import getUserOrders from '../../../fetchConnections/getUserOrders';
+
 function Pedidos() {
-  const data = [
-    {
-      id: "1",
-      usuario: "usuario",
-      ubicacion: "ubicacion",
-      status: "en camino",
-      hora: "11:46",
-    },
-    {
-      id: "2",
-      usuario: "usuario",
-      ubicacion: "ubicacion",
-      status: "en camino",
-      hora: "11:46",
-    },
-    {
-      id: "3",
-      usuario: "usuario",
-      ubicacion: "ubicacion",
-      status: "en camino",
-      hora: "11:46",
-    },
-    {
-      id: "4",
-      usuario: "usuario",
-      ubicacion: "ubicacion",
-      status: "en camino",
-      hora: "11:46",
-    },
-    {
-      id: "5",
-      usuario: "usuario",
-      ubicacion: "ubicacion",
-      status: "en camino",
-      hora: "11:46",
-    },
-  ];
+  const [orders, setOrders] = useState([]);
+
+  const getOrders = async () => {
+    const response = await getUserOrders();
+    setOrders(response);
+  }
+  useEffect(()=>{
+    getOrders();
+  },[])
+
   return (
     <div className="pedidos">
-      {data.map((data) => {
+      {orders.map((data) => {
         return (
           <div className="caja-pedido">
             <div className="pedido-info">
-              <h1>{data.id}</h1>
+              <h1>{data.order_id}</h1>
               <small>
-                Usuario: <b>{data.usuario}</b>
+                Usuario: <b>{data.username}</b>
               </small>
               <small>
-                Ubicaion: <b>{data.ubicacion}</b>
+                Fecha: <b>{data.date}</b>
               </small>
               <small>
-                Estatus: <b>{data.status}</b>
-              </small>
-              <small>
-                Hora del pedido: <b>{data.hora}</b>
+                Total: <b>{data.total}</b>
               </small>
             </div>
+            <button className='sesion-boton'>
+              <h2>Ver Detalles</h2>
+            </button>
           </div>
         );
       })}

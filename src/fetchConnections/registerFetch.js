@@ -13,6 +13,7 @@ const registerFetch = async (name, username, email, password, direccion) => {
     const data = {
       method: "POST",
       mode: "cors",
+      credentials: 'include',
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",

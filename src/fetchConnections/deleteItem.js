@@ -11,7 +11,7 @@ const data = {
 };
 
 const deleteItem = async (item) => {
-  const res = await fetch(
+  await fetch(
     `http://localhost:5000/deleteitem/${item}`,
     data
   ).then((cat) => {
