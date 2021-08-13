@@ -4,6 +4,7 @@ import Error from "../modal/ErrorProducto";
 
 import getCar from "../../../fetchConnections/getCar";
 import addItemTocar from "../../../fetchConnections/addItemTocar";
+import deleteItem from "../../../fetchConnections/deleteItem";
 import {getRes} from '../../../fetchConnections/setGetRes';
 
 function Carrito() {
@@ -50,6 +51,16 @@ function Carrito() {
          }
         }
 
+        const deleteitem = async ()=> {
+            await deleteItem(product.id)
+            const response = getRes()
+            if(response === 'Success'){
+                alert('Producto Eliminado!')
+            }else{
+                alert('Error Eliminando Producto!')
+            }
+        }
+
         return (
           <>
             <div key= {product.id} className="tienda-producto">
@@ -73,6 +84,7 @@ function Carrito() {
               </div>
               <div className="delete-boton">
                 <button
+                onClick = {deleteitem}
                   className="boton-sesion"
                 >
                   <h2>Eliminar Producto</h2>
