@@ -32,6 +32,9 @@
 .tienda-producto:hover .pedido-boton {
   opacity: 1;
 }
+.tienda-producto:hover .delete-boton {
+  opacity: 1;
+}
 .producto-imagen {
   flex-grow: 5;
   width: 100%;
@@ -51,9 +54,15 @@
 }
 .pedido-boton {
   position: absolute;
+  bottom: 70px;
+  opacity: 0;
+}
+.delete-boton{
+  position: absolute;
   bottom: 10px;
   opacity: 0;
 }
+
 .boton-tlf {
   display: none;
 }
@@ -72,6 +81,9 @@
     display: block;
   }
   .pedido-boton {
+    display: none;
+  }
+  .delete-boton {
     display: none;
   }
 }

@@ -9,6 +9,7 @@ import Dashboard from "../dashboard/Dashboard.jsx";
 import Tienda from "../tienda/Tienda";
 import AdminDashboard from "../dashboard/AdminDashboard";
 import Soporte from "../soporte/SoporteFull";
+import Carrito from "../carrito/Carrito";
 import "../../styles/style.css";
 function Index() {
   return (
@@ -39,6 +40,10 @@ function Index() {
           <Route path="/perfil">
           <NavbarSession/>
             <Perfil/>
+          </Route>
+          <Route path="/carrito">
+            <NavbarSession/>
+            <Carrito/>
           </Route>
         </Switch>
       </Router>

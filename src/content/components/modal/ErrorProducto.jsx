@@ -4,7 +4,7 @@ import "../../styles/modal.css";
 function Modal({ data }) {
   return (
     <>
-      <div className="modal">{data} Añadido, Reacargue la pagina!!!</div>
+      <div className="modal">Error Añadiendo Producto: {data} </div>
     </>
   );
 }

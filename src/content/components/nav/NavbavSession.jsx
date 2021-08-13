@@ -18,6 +18,9 @@ function Nav() {
             <li className="link">
               <a href="/perfil">Perfil</a>
             </li>
+            <li className="link">
+              <a href="/carrito">Carrito</a>
+            </li>
           </ul>
         </div>
       </div>
