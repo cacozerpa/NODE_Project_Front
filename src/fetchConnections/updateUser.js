@@ -9,6 +9,7 @@ const updateUser = async ( email ) => {
     const data = {
       method: "PUT",
       mode: "cors",
+      credentials: "include",
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
