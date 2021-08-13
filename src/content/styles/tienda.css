@@ -62,7 +62,11 @@
   bottom: 10px;
   opacity: 0;
 }
-
+.orden-boton{
+    position: absolute;
+    bottom: 490px;
+    right: 285px;
+}
 .boton-tlf {
   display: none;
 }

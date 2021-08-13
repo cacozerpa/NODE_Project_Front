@@ -13,7 +13,7 @@ function Nav() {
               <a href="/dashboard">Inicio</a>
             </li>
             <li className="link">
-              <a href="/soporte">Pedidos</a>
+              <a href="/pedidosusuario">Pedidos</a>
             </li>
             <li className="link">
               <a href="/perfil">Perfil</a>

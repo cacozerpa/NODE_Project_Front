@@ -20,6 +20,15 @@ function Dashboard() {
           >
             <h2>Tienda</h2>
           </button>
+          <h2>Pasos para realzar tu pedido:</h2>
+
+          <ul>
+            <li>Ve a la tienda</li>
+            <li>Añade los productos a tu carrito!</li>
+            <li>Oprime el boton de crear pedido...</li>
+            <li>Verifica los productos que tienes en tu pedido</li>
+            <li>Finaliza tu pedido!</li>
+          </ul>
         </div>
         <Soporte />
       </div>

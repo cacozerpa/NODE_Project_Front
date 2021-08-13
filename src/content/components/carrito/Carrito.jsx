@@ -3,7 +3,24 @@ import Soporte from "../soporte/Soporte";
 import Perfil from "../dashboard/Perfil";
 import Productos from "./ProductoCarrito";
 import "../../styles/tienda.css";
+
+import createOrder from '../../../fetchConnections/createOrder';
+import { getRes } from '../../../fetchConnections/setGetRes';
+
 function Carrito() {
+
+  const order = async () => {
+    await createOrder();
+
+    const response = getRes();
+
+    if(response === 'Success'){
+      alert('Orden Creada!')
+      window.location.assign('/dashboard')
+    }else{
+      alert('Error!');
+    }
+  }
   return (
     <>
       <div className="contenedor-dashboard">
@@ -18,6 +35,11 @@ function Carrito() {
           <hr className="tienda-hr" />
           <div className="tienda">
             <Productos />
+          </div>
+          <div className='orden-boton'>
+            <button className='boton-sesion' onClick={order}>
+              <h2>Crear Pedido</h2>
+            </button>
           </div>
           <Soporte />
         </div>

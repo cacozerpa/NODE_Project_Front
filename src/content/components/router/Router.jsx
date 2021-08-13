@@ -10,6 +10,8 @@ import Tienda from "../tienda/Tienda";
 import AdminDashboard from "../dashboard/AdminDashboard";
 import Soporte from "../soporte/SoporteFull";
 import Carrito from "../carrito/Carrito";
+import Pedido from "../Pedidos/Pedidos";
+import PedidoUsuario from "../PedidoUsuario/PedidoUsuario";
 import "../../styles/style.css";
 function Index() {
   return (
@@ -44,6 +46,14 @@ function Index() {
           <Route path="/carrito">
             <NavbarSession/>
             <Carrito/>
+          </Route>
+          <Route path ="/pedido">
+            <NavbarSession/>
+            <Pedido/>
+          </Route>
+          <Route path ="/pedidosusuario">
+            <NavbarSession/>
+            <PedidoUsuario/>
           </Route>
         </Switch>
       </Router>

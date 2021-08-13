@@ -27,6 +27,10 @@ function Perfil({ admin }) {
     }
   }
 
+  const profile = () => {
+    window.location.assign('/perfil')
+  }
+
   useEffect(() => {
     getUser();
   },[])
@@ -38,10 +42,7 @@ function Perfil({ admin }) {
       {admin && <small>Admin</small>}
       <div className="caja-botones-perfil">
         <div className="caja-botones-perfil-item">
-          <img src={UserButtonResume} alt="" />
-        </div>
-        <div className="caja-botones-perfil-item">
-          <img src={UserButtonSettings} alt="" />
+          <img src={UserButtonResume} alt="" onClick={profile}/>
         </div>
         <div className="caja-botones-perfil-item">
           <img src={UserButtonLogout} alt="" onClick={logout}/>
