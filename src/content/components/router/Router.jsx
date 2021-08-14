@@ -13,6 +13,9 @@ import Carrito from "../carrito/Carrito";
 import Pedido from "../Pedidos/Pedidos";
 import PedidoUsuario from "../PedidoUsuario/PedidoUsuario";
 import DetallesPedido from "../PedidoUsuario/DetallesPedido";
+import AccessAdmin from "../acceso/AccessAdmin";
+import NavAdmin from "../nav/NavbarAdmin";
+import DetallespedidoAdmin from "../Pedidos/DetallesPedido";
 import "../../styles/style.css";
 function Index() {
   return (
@@ -35,6 +38,7 @@ function Index() {
             <Tienda />
           </Route>
           <Route path="/admin-dashboard">
+          <NavAdmin/>
             <AdminDashboard />
           </Route>
           <Route path="/soporte">
@@ -61,6 +65,13 @@ function Index() {
             <DetallesPedido/>
           </Route>
         </Switch>
+        <Route path="/accesoadmin">
+            <AccessAdmin />
+          </Route>
+          <Route path='/detallespedidoadmin/:id'>
+            <NavAdmin/>
+            <DetallespedidoAdmin/>
+          </Route>
       </Router>
     </>
   );

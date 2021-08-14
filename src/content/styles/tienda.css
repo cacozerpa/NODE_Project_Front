@@ -62,6 +62,11 @@
   bottom: 10px;
   opacity: 0;
 }
+.delete{
+  position: absolute;
+  bottom: 230px;
+  margin-left: 63px;
+}
 .orden-boton{
     position: absolute;
     bottom: 490px;
@@ -69,6 +74,10 @@
 }
 .boton-tlf {
   display: none;
+}
+.tienda-item {
+  padding-bottom: 10px;
+  max-width: 768px;
 }
 @media (max-width: 768px) {
   .tienda {

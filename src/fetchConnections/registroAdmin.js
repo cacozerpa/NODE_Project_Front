@@ -1,10 +1,13 @@
 import { getRes, setRes } from "./setGetRes";
 
-const loginFetch = async (username, password) => {
+const registerAdminFetch = async (name, username, email, password, direccion) => {
   try {
     const body = {
+      name: name,
       username: username,
+      email: email,
       password: password,
+      direccion: direccion
     };
 
     const data = {
@@ -18,18 +21,13 @@ const loginFetch = async (username, password) => {
       body: JSON.stringify(body),
     };
 
-    return await fetch("http://localhost:5000/login", data)
+    return await fetch("http://localhost:5000/createadmin", data)
       .then((cat) => {
         console.log(cat.status)
         if (cat.status === 200) {
           setRes("Success");
         } else {
-          if(cat.status === 201) {
-            setRes("SuccessAdmin");
-          }else{
-            setRes("Fail")
-          }
-         
+          setRes("Fail");
         }
       }).then((response) => {
         const resp = getRes();
@@ -40,4 +38,4 @@ const loginFetch = async (username, password) => {
     console.log(error);
   }
 };
-export default loginFetch;
+export default registerAdminFetch;

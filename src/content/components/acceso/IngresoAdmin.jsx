@@ -14,13 +14,13 @@ function Ingreso() {
     const response = getRes();
     console.log(response)
 
-    if(response === "Success" || "SuccessAdmin") {
+    if(response === "SuccessAdmin") {
       localStorage.setItem('CREDENTIALS', JSON.stringify(username, password));
-      alert('Usuario Ingresado Correctamente')
-      window.location.assign("/dashboard");
+      alert('UsuarioAdmin Ingresado Correctamente')
+      window.location.assign("/admin-dashboard");
     }else{
       alert('Error en los datos ingresados!');
-      window.location.assign('/acceso');
+      window.location.assign('/accesoadmin');
     }
   }
   return (

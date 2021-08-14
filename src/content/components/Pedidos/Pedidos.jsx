@@ -1,68 +1,57 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "../../styles/pedidos.css";
-import Check from "../../images/tick.svg";
-import X from "../../images/letra-x.svg";
+import getOrders from "../../../fetchConnections/getAllOrders";
+import deleteOrder from "../../../fetchConnections/deleteOrder";
+import { getRes } from "../../../fetchConnections/setGetRes";
+
 function Pedidos() {
-  const data = [
-    {
-      id: "1",
-      usuario: "usuario",
-      ubicacion: "ubicacion",
-      status: "en camino",
-      hora: "11:46",
-    },
-    {
-      id: "2",
-      usuario: "usuario",
-      ubicacion: "ubicacion",
-      status: "en camino",
-      hora: "11:46",
-    },
-    {
-      id: "3",
-      usuario: "usuario",
-      ubicacion: "ubicacion",
-      status: "en camino",
-      hora: "11:46",
-    },
-    {
-      id: "4",
-      usuario: "usuario",
-      ubicacion: "ubicacion",
-      status: "en camino",
-      hora: "11:46",
-    },
-    {
-      id: "5",
-      usuario: "usuario",
-      ubicacion: "ubicacion",
-      status: "en camino",
-      hora: "11:46",
-    },
-  ];
+  const [orders, setOrders] = useState([]);
+
+  const getAllOrders = async () => {
+    const response = await getOrders();
+    setOrders(response);
+  }
+
+  useEffect(()=>{
+    getAllOrders()
+  },[])
+
   return (
     <div className="pedidos">
-      {data.map((data) => {
+      {orders.map((data) => {
+        const deleteOr = async () => {
+          await deleteOrder(data.order_id);
+          const response = getRes();
+
+          if(response === 'Success'){
+            alert(`Orden ${data.order_id} eliminada!`)
+            window.location.assign('/admin-dashboard')
+          }
+        }
+        const toDetails = () => {
+          window.location.assign('/detallespedidoadmin/' + data.order_id)
+        }
         return (
-          <div className="caja-pedido">
-            <div className="pedido-info">
-              <h1>{data.id}</h1>
+          <div className="caja-pedido" key={data.order_id}>
+            <div className="pedido-info" >
+              <h1>{data.order_id}</h1>
               <small>
-                Usuario: <b>{data.usuario}</b>
+                Usuario: <b>{data.username}</b>
               </small>
               <small>
-                Ubicaion: <b>{data.ubicacion}</b>
+                Fecha: <b>{data.date}</b>
               </small>
               <small>
-                Estatus: <b>{data.status}</b>
-              </small>
-              <small>
-                Hora del pedido: <b>{data.hora}</b>
+                Total: <b>${data.total}</b>
               </small>
             </div>
             <div className="pedido-botones">
-              <img src={Check} alt="" />
-              <img src={X} alt="" />
+              <button onClick={toDetails}>
+                <h2>Ver Detalles</h2>
+              </button>
+              <button onClick = {deleteOr}>
+                <h2>Eliminar</h2>
+              </button>
             </div>
           </div>
         );
