@@ -12,6 +12,7 @@ import Soporte from "../soporte/SoporteFull";
 import Carrito from "../carrito/Carrito";
 import Pedido from "../Pedidos/Pedidos";
 import PedidoUsuario from "../PedidoUsuario/PedidoUsuario";
+import DetallesPedido from "../PedidoUsuario/DetallesPedido";
 import "../../styles/style.css";
 function Index() {
   return (
@@ -54,6 +55,10 @@ function Index() {
           <Route path ="/pedidosusuario">
             <NavbarSession/>
             <PedidoUsuario/>
+          </Route>
+          <Route path ="/detalles/:id">
+            <NavbarSession/>
+            <DetallesPedido/>
           </Route>
         </Switch>
       </Router>

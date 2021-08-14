@@ -13,9 +13,14 @@ function Pedidos() {
     getOrders();
   },[])
 
+
   return (
     <div className="pedidos">
       {orders.map((data) => {
+
+        const goToDetails = () => {
+          window.location.assign(`/detalles` + '/' + data.order_id)
+        }
         return (
           <div className="caja-pedido">
             <div className="pedido-info">
@@ -27,10 +32,10 @@ function Pedidos() {
                 Fecha: <b>{data.date}</b>
               </small>
               <small>
-                Total: <b>{data.total}</b>
+                Total: <b>${data.total}</b>
               </small>
             </div>
-            <button className='sesion-boton'>
+            <button className='sesion-boton'onClick={goToDetails}>
               <h2>Ver Detalles</h2>
             </button>
           </div>
