@@ -4,7 +4,7 @@ function Detallespedido({productos}) {
       {productos.map((product) => {
         return (
           <>
-            <div key= {product.id} className="tienda-producto">
+            <div  key= {product.id} className="tienda-producto">
               <div
                 className="producto-imagen"
                 style={{
@@ -16,7 +16,7 @@ function Detallespedido({productos}) {
                 }}
               ></div>
              
-              <div className="producto-titulo">
+              <div  className="producto-titulo">
                 <h4>{product.prod_name}</h4>
                 <small>
                   Cantidad: {product.qty}                  

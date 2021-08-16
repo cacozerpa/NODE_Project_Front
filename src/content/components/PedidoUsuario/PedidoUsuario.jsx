@@ -24,7 +24,7 @@ function Pedidos() {
         }
         return (
           
-          <div className="caja-pedido">
+          <div key={data.order_id} className="caja-pedido">
             <div className="pedido-info">
               <h1>{data.order_id}</h1>
               <small>

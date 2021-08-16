@@ -34,7 +34,7 @@ function DetallesPedido() {
           <h2>Total: ${productos[0].total} </h2>
           <hr className="tienda-hr" />
           <div className="tienda">
-            <Productos productos={productos} />
+            <Productos key={productos.id} productos={productos} />
           </div>
           <Soporte />
         </div>
