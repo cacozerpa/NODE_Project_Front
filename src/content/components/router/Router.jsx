@@ -11,7 +11,7 @@ import AdminDashboard from "../dashboard/AdminDashboard";
 import Soporte from "../soporte/SoporteFull";
 import Carrito from "../carrito/Carrito";
 import Pedido from "../Pedidos/Pedidos";
-import PedidoUsuario from "../PedidoUsuario/PedidoUsuario";
+import PedidoUsuario from "../PedidoUsuario/Pedidos";
 import DetallesPedido from "../PedidoUsuario/DetallesPedido";
 import AccessAdmin from "../acceso/AccessAdmin";
 import NavAdmin from "../nav/NavbarAdmin";

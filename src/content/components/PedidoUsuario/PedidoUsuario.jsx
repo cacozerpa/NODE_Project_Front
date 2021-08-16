@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from "react";
-import Perfil from "../dashboard/Perfil";
 import "../../styles/pedidos.css";
 import getUserOrders from '../../../fetchConnections/getUserOrders';
 
