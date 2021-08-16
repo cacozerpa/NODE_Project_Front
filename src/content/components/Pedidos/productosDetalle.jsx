@@ -24,16 +24,7 @@ function Detallespedido({productos}) {
           return (
             <>
               <div key= {product.id} className="tienda-item">
-                <div
-                  className="producto-imagen"
-                  style={{
-                    background: `black`,
-                    backgroundPosition: "center",
-                    backgroundRepeat: "no-repeat",
-                    backgroundColor: "#f3f3f3",
-                    backgroundSize: "contain",
-                  }}
-                ></div>
+            
               <div className="delete">
                 <button
                 onClick = {deleteitem}

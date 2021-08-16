@@ -2,22 +2,13 @@ import React, { useState, useEffect } from "react";
 import Modal from "../modal/ProductAdded";
 
 import getProductsFetch from '../../../fetchConnections/getProductsFetch'
-import addItemTocar from "../../../fetchConnections/addItemTocar";
-import {getRes} from '../../../fetchConnections/setGetRes';
 
-function Tienda() {
+
+function VistaProductos() {
   const [data, setData] = useState("");
   const [productos, setProductos] = useState([]);
 
-  function showModal(title) {
-    setData(title);
-    setTimeout(() => {
-      setData("");
-    }, 3000);
-  }
-
   
-
   const getProducts = async () => {
     const products = await getProductsFetch();
     setProductos(products);
@@ -31,17 +22,9 @@ function Tienda() {
     <>
       {data && <Modal data={data} />}
       {productos.map((product) => {
-
-      const additem = async () => {
-
-      await addItemTocar(product.id)
-      console.log(product.id)
-      const response = getRes();
-      if(response === 'Success'){
-        showModal(product.name)
-      }else{
-        alert('Error Añadiendo producto!');
-       }
+        
+      const goToDetails = async () => {
+        window.location.assign('/detallesproducto/' + product.id);
       }
 
         return (
@@ -59,10 +42,10 @@ function Tienda() {
               ></div>
               <div className="pedido-boton">
                 <button
-                  onClick={additem}
+                  onClick={goToDetails}
                   className="boton-sesion"
                 >
-                  <h2>Añadir al carrito</h2>
+                  <h2>Ver Detalles</h2>
                 </button>
               </div>
               <div className="producto-titulo">
@@ -71,15 +54,9 @@ function Tienda() {
                   {product.description}
                 </small>
                 <small className="descripcion-corta">
-                  ${product.price}
+                  Precio: ${product.price}
                 </small>
               </div>
-              <button
-                onClick={additem}
-                className="boton-sesion boton-tlf"
-              >
-                <h2>Añadir al carrito</h2>
-              </button>
             </div>
           </>
         );
@@ -88,4 +65,4 @@ function Tienda() {
   );
 }
 
-export default Tienda;
+export default VistaProductos;

@@ -16,6 +16,9 @@ import DetallesPedido from "../PedidoUsuario/DetallesPedido";
 import AccessAdmin from "../acceso/AccessAdmin";
 import NavAdmin from "../nav/NavbarAdmin";
 import DetallespedidoAdmin from "../Pedidos/DetallesPedido";
+import VistaProductos from "../productos/VistaProductos";
+import DetallesProductos from "../productos/DetallesProductos";
+import CrearProducto from "../productos/CrearProducto";
 import "../../styles/style.css";
 function Index() {
   return (
@@ -71,6 +74,18 @@ function Index() {
           <Route path='/detallespedidoadmin/:id'>
             <NavAdmin/>
             <DetallespedidoAdmin/>
+          </Route>
+          <Route path = '/productos'>
+            <NavAdmin/>
+            <VistaProductos/>
+          </Route>
+          <Route path = '/detallesproducto/:id'>
+            <NavAdmin/>
+            <DetallesProductos/>
+          </Route>
+          <Route path = '/crearproducto'>
+            <NavAdmin/>
+            <CrearProducto/>
           </Route>
       </Router>
     </>

@@ -20,14 +20,14 @@ function DetallesPedido() {
   
   useEffect(()=> {
     getDetails();
-  }, [])
+  },[])
 
 
   return (
     <>
       <div className="contenedor-dashboard">
         <div className="contenedor-info-perfil">
-          <Perfil />
+          <Perfil admin={true} />
         </div>
         <div className="contenedor-contenido-dashboard" >
           <h1>Detalles del pedido #{productos[0].idorder}</h1>
