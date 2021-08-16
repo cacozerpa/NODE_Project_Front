@@ -19,6 +19,8 @@ import DetallespedidoAdmin from "../Pedidos/DetallesPedido";
 import VistaProductos from "../productos/VistaProductos";
 import DetallesProductos from "../productos/DetallesProductos";
 import CrearProducto from "../productos/CrearProducto";
+import Usuarios from '../usuarios/Usuarios';
+import DetallesUsuario from '../usuarios/DetallesUsuario';
 import "../../styles/style.css";
 function Index() {
   return (
@@ -86,6 +88,14 @@ function Index() {
           <Route path = '/crearproducto'>
             <NavAdmin/>
             <CrearProducto/>
+          </Route>
+          <Route path="/usuarios">
+            <NavAdmin/>
+            <Usuarios/>
+          </Route>
+          <Route path="/detallesusuario/:id">
+            <NavAdmin/>
+            <DetallesUsuario/>
           </Route>
       </Router>
     </>

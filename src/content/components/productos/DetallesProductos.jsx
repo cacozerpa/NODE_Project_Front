@@ -4,6 +4,7 @@ import { useParams } from "react-router";
 import {getRes} from "../../../fetchConnections/setGetRes";
 import getProductDetails from "../../../fetchConnections/getProductDetails";
 import updateProduct from "../../../fetchConnections/updateProduct";
+import deleteProduct from "../../../fetchConnections/deleteProd";
 
 function DetallesProductos() {
   const {id} = useParams();
@@ -31,7 +32,16 @@ function DetallesProductos() {
   }
 
   const deleteProd = async () => {
-    
+    await deleteProduct(id);
+
+    const response = getRes();
+
+    if(response === "Success"){
+      alert('Producto eliminado Exitosamente!')
+      window.location.assign('/productos');
+    }else{
+      alert('Error Deleting Product!')
+    }
   }
 
   const getDetails =  async () => {
@@ -77,7 +87,9 @@ function DetallesProductos() {
         >
           <h2>Actualizar</h2>
         </button>
-        <button className= "boton-sesion">
+        <button 
+        onClick={deleteProd}
+        className= "boton-sesion">
             <h2>Eliminar</h2>
         </button>
       </form>

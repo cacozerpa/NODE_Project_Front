@@ -16,7 +16,7 @@ function Nav() {
               <a href="/productos">Productos</a>
             </li>
             <li className="link">
-              <a href="/dashboard-admin">Usuarios</a>
+              <a href="/usuarios">Usuarios</a>
             </li>
           </ul>
         </div>

@@ -12,7 +12,7 @@ const data = {
 
 const deleteOrder = async (item) => {
   await fetch(
-    `http://localhost:5000/products/${item}`,
+    `http://localhost:5000/deleteuser/${item}`,
     data
   ).then((cat) => {
     console.log(cat.status)
