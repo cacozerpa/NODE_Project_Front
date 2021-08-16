@@ -9,6 +9,7 @@ function Pedidos() {
     const response = await getUserOrders();
     setOrders(response);
   }
+  
   useEffect(()=>{
     getOrders();
   },[])
@@ -19,7 +20,7 @@ function Pedidos() {
       {orders.map((data) => {
 
         const goToDetails = () => {
-          window.location.assign(`/detalles` + '/' + data.order_id)
+          window.location.assign(`/detalles/` + data.order_id)
         }
         return (
           

@@ -29,7 +29,7 @@ function Carrito({productos}) {
           showModal(product.name)
           setTimeout(()=>{
             window.location.assign('/carrito')
-          }, 3000)
+          }, 1500)
         }else{
           alert('Error!')
         }

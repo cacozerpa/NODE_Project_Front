@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from "react";
-import Modal from "../modal/ProductAdded";
 
 import getProductsFetch from '../../../fetchConnections/getProductsFetch'
 
 
 function VistaProductos() {
-  const [data, setData] = useState("");
   const [productos, setProductos] = useState([]);
 
   
@@ -20,7 +18,6 @@ function VistaProductos() {
 
   return (
     <>
-      {data && <Modal data={data} />}
       {productos.map((product) => {
         
       const goToDetails = async () => {

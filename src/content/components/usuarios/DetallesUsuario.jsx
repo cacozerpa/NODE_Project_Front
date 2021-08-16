@@ -22,7 +22,7 @@ function Perfil() {
 
       const response = getRes();
 
-      if(response == "Success"){
+      if(response === "Success"){
           alert('Usuario eliminado!')
           window.location.assign('/usuarios');
       }else{
@@ -64,7 +64,6 @@ function Perfil() {
   },[])
 
   useEffect(() => {
-      console.log(data)
     setEmail(data.email);
     setName(data.name)
     setUsername(data.username)

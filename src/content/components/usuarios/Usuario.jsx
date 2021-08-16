@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../../styles/pedidos.css";
-import getOrders from "../../../fetchConnections/getAllOrders";
 import getUsers from "../../../fetchConnections/getUsers";
-import { getRes } from "../../../fetchConnections/setGetRes";
 
 function Pedidos() {
   const [users, setUsers] = useState([]);
