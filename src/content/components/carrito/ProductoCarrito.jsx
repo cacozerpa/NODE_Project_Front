@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Modal from "../modal/ProductAdded";
-import Error from "../modal/ErrorProducto";
 
 import addItemTocar from "../../../fetchConnections/addItemTocar";
 import deleteItem from "../../../fetchConnections/deleteItem";
@@ -15,18 +14,9 @@ function Carrito({productos}) {
       setData("");
     }, 3000);
   }
-
-  function showError(title) {
-      setData(title);
-      setTimeout(() => {
-          setData('');
-      }, 3000);
-  }
-
   return (
     <>
       {data && <Modal data={data} />}
-      {data && <Error data={data}/>}
       {productos.map((product) => {
 
         const additem = async () => {
@@ -34,11 +24,15 @@ function Carrito({productos}) {
         await addItemTocar(product.id)
         console.log(product.id)
         const response = getRes();
+
         if(response === 'Success'){
           showModal(product.name)
+          setTimeout(()=>{
+            window.location.assign('/carrito')
+          }, 3000)
         }else{
-          showError(product.name)
-         }
+          alert('Error!')
+        }
         }
 
         const deleteitem = async ()=> {
@@ -46,6 +40,8 @@ function Carrito({productos}) {
             const response = getRes()
             if(response === 'Success'){
                 alert('Producto Eliminado!')
+                window.location.assign('/carrito')
+
             }else{
                 alert('Error Eliminando Producto!')
             }
@@ -57,7 +53,7 @@ function Carrito({productos}) {
               <div
                 className="producto-imagen"
                 style={{
-                  background: `black`,
+                  background: `url(${product.img})`,
                   backgroundPosition: "center",
                   backgroundRepeat: "no-repeat",
                   backgroundColor: "#f3f3f3",

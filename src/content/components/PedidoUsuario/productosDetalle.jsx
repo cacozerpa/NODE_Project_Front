@@ -8,7 +8,7 @@ function Detallespedido({productos}) {
               <div
                 className="producto-imagen"
                 style={{
-                  background: `black`,
+                  background: `url(${product.prod_img})`,
                   backgroundPosition: "center",
                   backgroundRepeat: "no-repeat",
                   backgroundColor: "#f3f3f3",

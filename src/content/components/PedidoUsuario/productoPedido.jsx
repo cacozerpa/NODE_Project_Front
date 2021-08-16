@@ -25,6 +25,7 @@ function Carrito() {
   const getItems = async () => {
     const products = await getCar();
     setProductos(products);
+    console.log(products)
   }
 
   useEffect(()=> {
@@ -63,7 +64,7 @@ function Carrito() {
               <div
                 className="producto-imagen"
                 style={{
-                  background: `black`,
+                  background: `url(${product.img})`,
                   backgroundPosition: "center",
                   backgroundRepeat: "no-repeat",
                   backgroundColor: "#f3f3f3",

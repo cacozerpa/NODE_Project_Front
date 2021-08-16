@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from "react";
+import Perfil from "../dashboard/Perfil";
 import "../../styles/pedidos.css";
 import getUserOrders from '../../../fetchConnections/getUserOrders';
 
@@ -22,6 +23,7 @@ function Pedidos() {
           window.location.assign(`/detalles` + '/' + data.order_id)
         }
         return (
+          
           <div className="caja-pedido">
             <div className="pedido-info">
               <h1>{data.order_id}</h1>

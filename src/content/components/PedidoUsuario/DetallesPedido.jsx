@@ -15,7 +15,7 @@ function DetallesPedido() {
   const getDetails = async () => {
     const products = await getOrderDetails(id);
     setProductos(products);
-    
+    console.log(products)
   }
   
   useEffect(()=> {
