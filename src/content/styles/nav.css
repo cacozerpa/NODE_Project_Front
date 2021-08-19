@@ -26,9 +26,22 @@
   padding-right: 20px;
 }
 
+.barra-busqueda {
+  display: flex;
+  justify-content: center;
+  flex-grow: 3;
+}
+.barra-busqueda input {
+  width: 90%;
+  border-style: none;
+  background-color: white;
+  padding: 15px;
+  border-radius: 5px;
+}
 .barra-busqueda input:focus {
   outline: none !important;
 }
+
 .links {
   margin: 75px;
   flex-grow: 0.1;

@@ -18,7 +18,10 @@ function Pedidos() {
 
   return (
     <div className="pedidos">
-      {orders.map((data) => {
+      <div className="barra-busqueda">
+        <input type="text" placeholder="Buscar por usuario"/>
+      </div>
+      {orders.map((data, key) => {
         const deleteOr = async () => {
           await deleteOrder(data.order_id);
           const response = getRes();
@@ -32,7 +35,7 @@ function Pedidos() {
           window.location.assign('/detallespedidoadmin/' + data.order_id)
         }
         return (
-          <div className="caja-pedido" key={data.order_id}>
+          <div className="caja-pedido" key={key}>
             <div className="pedido-info" >
               <h1>{data.order_id}</h1>
               <small>

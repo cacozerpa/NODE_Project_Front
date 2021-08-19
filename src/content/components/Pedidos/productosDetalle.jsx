@@ -24,16 +24,7 @@ function Detallespedido({productos}) {
           return (
             <>
               <div key= {product.id} className="tienda-item">
-            
-              <div className="delete">
-                <button
-                onClick = {deleteitem}
-                  className="boton-sesion"
-                >
-                  <h2>Eliminar</h2>
-                </button>
-              </div>
-               
+              
                 <div className="producto-titulo">
                   <h4>{product.prod_name}</h4>
                   <small>
@@ -43,6 +34,14 @@ function Detallespedido({productos}) {
                     Precio/und: {product.prod_price}$
                   </small>
                 </div>
+                <div className="delete">
+                <button
+                onClick = {deleteitem}
+                  className="boton-sesion"
+                >
+                  <h2>Eliminar</h2>
+                </button>
+              </div>
               </div>
             </>
           );

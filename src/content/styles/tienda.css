@@ -62,11 +62,9 @@
   bottom: 10px;
   opacity: 0;
 }
-
 .delete{
-  position: absolute;
-  bottom: 230px;
   margin-left: 63px;
+  bottom: 30px;
 }
 .orden-boton{
     position: absolute;

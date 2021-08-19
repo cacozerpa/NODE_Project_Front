@@ -26,12 +26,13 @@ function Index() {
   return (
     <>
       <Router>
-        <Navbar />
         <Switch>
           <Route exact path="/">
+            <Navbar />
             <Home />
           </Route>
           <Route path="/acceso">
+            <Navbar />
             <Access />
           </Route>
           <Route path="/dashboard">
