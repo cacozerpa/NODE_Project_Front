@@ -49,6 +49,7 @@ function Index() {
             <AdminDashboard />
           </Route>
           <Route path="/soporte">
+            <Navbar/>
             <Soporte />
           </Route>
           <Route path="/perfil">
