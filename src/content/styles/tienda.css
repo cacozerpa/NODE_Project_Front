@@ -35,6 +35,9 @@
 .tienda-producto:hover .delete-boton {
   opacity: 1;
 }
+.tienda-producto:hover .detalle-boton {
+  opacity: 1;
+}
 .producto-imagen {
   flex-grow: 5;
   width: 100%;
@@ -57,6 +60,12 @@
   bottom: 70px;
   opacity: 0;
 }
+.detalle-boton{
+  position: absolute;
+  bottom: 130px;
+  opacity: 0;
+}
+
 .delete-boton{
   position: absolute;
   bottom: 10px;
@@ -96,6 +105,9 @@
     display: none;
   }
   .delete-boton {
+    display: none;
+  }
+  .detalle-boton{
     display: none;
   }
 }

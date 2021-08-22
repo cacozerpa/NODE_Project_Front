@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect} from "react";
 import Modal from "../modal/ProductAdded";
 
 import addItemTocar from "../../../fetchConnections/addItemTocar";
@@ -14,10 +14,15 @@ function Carrito({productos}) {
       setData("");
     }, 3000);
   }
+
   return (
     <>
       {data && <Modal data={data} />}
-      {productos.map((product) => {
+      {productos.map((product, key) => {
+
+        const goToDetails = async () => {
+          window.location.assign('/item/' + product.id);
+        }
 
         const additem = async () => {
 
@@ -49,7 +54,7 @@ function Carrito({productos}) {
 
         return (
           <>
-            <div key= {product.id} className="tienda-producto">
+            <div key= {key} className="tienda-producto">
               <div
                 className="producto-imagen"
                 style={{
@@ -76,12 +81,19 @@ function Carrito({productos}) {
                   <h2>Eliminar Producto</h2>
                 </button>
               </div>
+              <div className="detalle-boton">
+                <button
+                  onClick = {goToDetails}
+                  className="boton-sesion"
+                >
+                  <h2>Ver Detalles</h2>
+                </button>
+              </div>
               <div className="producto-titulo">
                 <h4>{product.name}</h4>
-                <small>
-                  Cantidad: {product.qty}
-                  
-                </small>
+                  <small>
+                    Cantidad: {product.qty}
+                  </small>                
                 <small>
                 Precio/und: ${product.price}
                 </small>

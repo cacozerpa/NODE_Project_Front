@@ -21,6 +21,7 @@ import DetallesProductos from "../productos/DetallesProductos";
 import CrearProducto from "../productos/CrearProducto";
 import Usuarios from '../usuarios/Usuarios';
 import DetallesUsuario from '../usuarios/DetallesUsuario';
+import DetallesItem from '../carrito/detalleProducto';
 import "../../styles/style.css";
 function Index() {
   return (
@@ -97,6 +98,10 @@ function Index() {
           <Route path="/detallesusuario/:id">
             <NavAdmin/>
             <DetallesUsuario/>
+          </Route>
+          <Route path="/item/:id">
+            <NavbarSession/>
+            <DetallesItem/>
           </Route>
       </Router>
     </>
