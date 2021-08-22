@@ -35,8 +35,6 @@ function Carrito() {
     <>
       {productos.map((product) => {
 
-    
-
         return (
           <>
             <div key= {product.id} className="tienda-producto">

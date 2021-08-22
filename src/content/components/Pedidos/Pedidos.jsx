@@ -6,6 +6,7 @@ import { getRes } from "../../../fetchConnections/setGetRes";
 
 function Pedidos() {
   const [orders, setOrders] = useState([]);
+  const [search, setSearch] = useState('');
 
   const getAllOrders = async () => {
     const response = await getOrders();
@@ -19,9 +20,15 @@ function Pedidos() {
   return (
     <div className="pedidos">
       <div className="barra-busqueda">
-        <input type="text" placeholder="Buscar por usuario"/>
+        <input type="text" placeholder="Buscar por usuario" onChange = {event => {setSearch(event.target.value)}}/>
       </div>
-      {orders.map((data, key) => {
+      {orders.filter((data) => {
+        if(search == ''){
+          return data
+        }else if(data.username.toLowerCase().includes(search.toLowerCase())){
+          return data
+        }
+      }).map((data, key) => {
         const deleteOr = async () => {
           await deleteOrder(data.order_id);
           const response = getRes();
